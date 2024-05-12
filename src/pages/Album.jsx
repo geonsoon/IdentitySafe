@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-class Mainnav extends Component {
+class Home2 extends Component {
     render() {
         return (
             <div>
-                123456
+                Album
             </div>
         );
     }
 }
 
-export default Mainnav;
+export default Home2;
