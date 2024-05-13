@@ -1,29 +1,27 @@
 import './App.css';
 import React from 'react';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Main from './pages/Main';
-import Camera from './pages/Camera';
-import Album from './pages/Album';
+import { BrowserRouter, Routes, Route , Link} from "react-router-dom";
+import Logo from '../src/image/identitysafe.jpeg';
+import ActionAreaCard from './pages/ActionAreaCard';
+import Safefunction from './pages/Safefunction';
 
 function App() {
   return (
-    <div>
       <div>
         <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Main />} />
-            <Route path="/camera" element={<Camera />} />
-            <Route path="/album" element={<Album />} />
-          </Routes>
+          <div>
+            <Link to="/">
+              <img src={Logo} alt="Logo" width={100} height={100}/>
+            </Link>
+          </div>
+          <div>
+            <ActionAreaCard></ActionAreaCard>
+          </div>
+          <div>
+            <Safefunction></Safefunction>
+          </div>
         </BrowserRouter>
       </div>
-      <div>
-        메인
-      </div>
-      <div>
-        푸터
-      </div>
-    </div>
   );
 }
 
