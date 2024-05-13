@@ -1,8 +1,15 @@
-.center {
+.footer {
+    position: fixed; 
+    bottom: 0; 
+    padding-bottom: 40px;
+    width: 100%; 
     text-align: center;
 }
 
 .icon {
-    justify-content: center;
     padding: 20px;
+}
+
+.margin {
+    margin-right: 20px;
 }
