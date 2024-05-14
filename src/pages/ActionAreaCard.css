@@ -1,48 +1,66 @@
-/* 기본 스타일 */
+@font-face {
+    font-family: 'WavvePADO-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2404@1.0/WavvePADO-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .text {
     padding: 20px;
-  }
-  
-  .footer {
+}
+
+.font1 {
+    font-family: WavvePADO-Regular, sans-serif;
+}
+
+.font2 {
+    font-family: GmarketSansMedium, sans-serif;
+}
+
+.footer {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px;
-  }
-  
-  .icon {
+}
+
+.icon {
     display: flex;
-    justify-content: center; /* 아이콘을 중앙에 위치시킵니다. */
-    margin-top: 20px; /* 텍스트와 아이콘 사이의 마진을 설정합니다. */
-  }
-  
-  .margin {
-    margin-right: 10px; /* 아이콘 사이의 공간을 설정합니다. */
-  }
-  
-  /* 태블릿 */
-  @media (max-width: 768px) {
-    .text, .footer {
-      padding: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.margin {
+    margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+
+    .text,
+    .footer {
+        padding: 15px;
     }
-  
+
     .icon span {
-      margin-right: 5px; /* 아이콘 사이의 공간을 조정합니다. */
+        margin-right: 5px;
     }
-  }
-  
-  /* 모바일 */
-  @media (max-width: 480px) {
+}
+
+@media (max-width: 480px) {
     .Card {
-      max-width: 100%;
-      height: auto;
+        max-width: 100%;
+        height: auto;
     }
-  
-    .text, .footer {
-      padding: 10px;
+
+    .text,
+    .footer {
+        padding: 10px;
     }
-  
-    /* 모바일 환경에서도 아이콘이 한 줄에 표시되도록 합니다. */
-    /* 이 부분을 변경하지 않음으로써 모든 화면 크기에 대해 일관된 레이아웃을 유지합니다. */
-  }
-  
+}
