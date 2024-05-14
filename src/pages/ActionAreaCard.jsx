@@ -15,9 +15,6 @@ export default function ActionAreaCard() {
     <Card sx={{ maxWidth: 1545, height: 850}}>
       <CardActionArea>
         <CardContent className='text'>
-          <Typography gutterBottom variant="h4" component="div">
-            IdentitySafe
-          </Typography>
           <Typography gutterBottom variant="h5" component="div">
             서비스 목표
           </Typography>
@@ -51,3 +48,4 @@ export default function ActionAreaCard() {
     </Card>
   );
 }
+
