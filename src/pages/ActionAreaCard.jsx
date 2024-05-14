@@ -39,13 +39,19 @@ export default function ActionAreaCard() {
             청주대 인공지능소프트웨어학과 <br />
             박건순, 박균호, 전유나 제작
           </Typography>
-          <div className='footer font2'>
+        </CardContent>
+      </CardActionArea>
+      <CardActionArea>
+        <CardContent>
+        <CardContent>
+        <div className='footer font2'>
                 <span>개인정보비식별화 대상을 선택하세요</span>
                 <div className='icon'>
                 <span className='margin'><FontAwesomeIcon icon={faCameraRetro} size="2xl" /></span>
                 <span><FontAwesomeIcon icon={faImage} size="2xl" /></span>
                 </div>
-            </div>
+        </div>
+        </CardContent>
         </CardContent>
       </CardActionArea>
     </Card>
