@@ -1,9 +1,8 @@
 import './App.css';
 import React from 'react';
 import { BrowserRouter, Routes, Route , Link} from "react-router-dom";
-import Logo from '../src/image/identitysafe.jpeg';
+import Logo from '../src/image/identitysafe.png';
 import ActionAreaCard from './pages/ActionAreaCard';
-import Safefunction from './pages/Safefunction';
 
 function App() {
   return (
@@ -11,14 +10,11 @@ function App() {
         <BrowserRouter>
           <div>
             <Link to="/">
-              <img src={Logo} alt="Logo" width={100} height={100}/>
+              <img src={Logo} alt="Logo" width={200} />
             </Link>
           </div>
           <div>
             <ActionAreaCard></ActionAreaCard>
-          </div>
-          <div>
-            <Safefunction></Safefunction>
           </div>
         </BrowserRouter>
       </div>
