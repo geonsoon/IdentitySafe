@@ -8,7 +8,7 @@ import './ActionAreaCard.css';
 
 export default function ActionAreaCard() {
   return (
-    <Card sx={{ maxWidth: 1500, maxheight: 1000}}>
+    <Card sx={{ maxWidth: 1500, maxHeight: 1000, border: 0, boxShadow: 0 }}>
       <CardActionArea>
         <CardContent className='text'>
           <Typography gutterBottom variant="h5" component="div">
