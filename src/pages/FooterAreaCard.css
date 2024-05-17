@@ -15,6 +15,13 @@
     align-items: center;
     padding: 20px;
     background-color: rgb(236, 240, 241);
+    border-top: 2px solid rgb(209, 216, 224);
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 .footerAreaCard {

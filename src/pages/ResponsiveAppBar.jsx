@@ -24,7 +24,7 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static" sx={{ backgroundColor: 'rgb(236, 240, 241)' }}>
+    <AppBar position="static" sx={{ backgroundColor: 'rgb(236, 240, 241)', borderBottom: '2px solid rgb(209, 216, 224)'}}>
       <Toolbar>
         <Typography
           variant="h6"

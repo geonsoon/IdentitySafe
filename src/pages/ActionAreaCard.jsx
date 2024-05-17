@@ -20,7 +20,7 @@ export default function ActionAreaCard() {
             더 나아가, 사람들은 자신의 개인정보가 존중받고 보호되는 환경에서 더 자유롭게 행동하고 창조적인 활동에 참여할 수 있을 것입니다.<br />
           </span>
           </Typography>
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography gutterBottom variant="h5" component="div" sx={{ marginTop: '8px', lineHeight: 1.5 }}>
             <span className='font1'>활용방안</span>
           </Typography>
           <Typography variant="body1" color="text.secondary">
@@ -33,9 +33,9 @@ export default function ActionAreaCard() {
           <br />
           <Typography variant="body2" color="text.secondary">
             <span className='font1'></span>
-            <span className='boldfont'>©2024 IdentitySafe. All right reserved. </span><br />
             청주대 인공지능소프트웨어학과 <br />
-            박건순, 박균호, 전유나 제작
+            박건순, 박균호, 전유나 제작 <br />
+            <span className='boldfont'>©2024 IdentitySafe. All right reserved. </span>
           </Typography>
         </CardContent>
       </CardActionArea>
