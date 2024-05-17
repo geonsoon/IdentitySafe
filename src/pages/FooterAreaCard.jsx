@@ -11,7 +11,7 @@ import { faImage } from "@fortawesome/free-solid-svg-icons";
 
 export default function ActionAreaCard() {
   return (
-    <Card sx={{ maxWidth: 1500, maxheight: 1000}}>
+    <Card Card className="footerAreaCard cardSizeOverrides" >
       <CardActionArea>
       <CardContent sx={{ padding: "0px" }}>
         <div className='footer font2'>
