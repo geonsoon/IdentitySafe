@@ -1,34 +1,21 @@
 @font-face {
-    font-family: 'WavvePADO-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2404@1.0/WavvePADO-Regular.woff2') format('woff2');
+    font-family: 'GmarketSansMedium';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
-
-.text {
-    padding: 20px;
+.font2 {
+    font-family: GmarketSansMedium, sans-serif;
 }
 
-.font1 {
-    font-family: WavvePADO-Regular, sans-serif;
-}
-
-.boldfont {
-    font-weight: 1000;
-}
-
-
-.icon {
+.footer {
     display: flex;
-    justify-content: center;
-    margin-top: 20px;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: rgb(236, 240, 241);
 }
-
-.margin {
-    margin-right: 10px;
-}
-
 
 @media (max-width: 768px) {
 
