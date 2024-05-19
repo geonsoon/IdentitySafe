@@ -1,0 +1,48 @@
+@font-face {
+    font-family: 'WavvePADO-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2404@1.0/WavvePADO-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+.text {
+    padding: 20px;
+}
+
+.font1 {
+    font-family: WavvePADO-Regular, sans-serif;
+  }
+  
+.boldfont {
+    font-weight: bold;
+  }
+
+.margin {
+    margin-right: 10px;
+}
+
+
+@media (max-width: 768px) {
+
+    .text,
+    .footer {
+        padding: 15px;
+    }
+
+    .icon span {
+        margin-right: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .Card {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .text,
+    .footer {
+        padding: 10px;
+    }
+}
