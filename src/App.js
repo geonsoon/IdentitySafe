@@ -2,9 +2,7 @@ import './App.css';
 import React from 'react';
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import ResponsiveAppBar from './pages/ResponsiveAppBar';
-import ActionAreaCard from './pages/ActionAreaCard';
-import FooterAreaCard from './pages/FooterAreaCard';
-import VideoRecorder from './pages/VideoRecorder';
+import Camera from './pages/Camera';
 import Home from './pages/Home';
 
 function App() {
@@ -17,11 +15,9 @@ function App() {
         
         <Routes>
           <Route path="/home" element={<Home />} />
-          <Route path="/camera" element={<VideoRecorder />} />
+          <Route path="/camera" element={<Camera />} />
         </Routes>
         
-        <ActionAreaCard />
-        <FooterAreaCard />
       </BrowserRouter>
     </div>
   );
