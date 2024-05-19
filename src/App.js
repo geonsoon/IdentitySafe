@@ -5,6 +5,7 @@ import Logo from '../src/image/identitysafe.png';
 import ResponsiveAppBar from './pages/ResponsiveAppBar';
 import ActionAreaCard from './pages/ActionAreaCard';
 import FooterAreaCard from './pages/FooterAreaCard';
+import VideoRecorder from './pages/VideoRecorder';
 
 function App() {
   return (
@@ -17,6 +18,9 @@ function App() {
           </div>
           <div>
             <ActionAreaCard></ActionAreaCard>
+          </div>
+          <div>
+            <VideoRecorder></VideoRecorder>
           </div>
           <div>
             <FooterAreaCard></FooterAreaCard>
