@@ -4,6 +4,7 @@ function VideoRecorder() {
   const [recording, setRecording] = useState(false);
   const [videoURL, setVideoURL] = useState('');
   const [cameraFacing, setCameraFacing] = useState('user'); // 'user' for front-facing, 'environment' for rear-facing
+  const [isMirrored, setIsMirrored] = useState(false); // 미러 기능 상태
   const videoRef = useRef();
   const mediaRecorderRef = useRef();
   const videoChunks = useRef([]);
@@ -53,6 +54,10 @@ function VideoRecorder() {
     startRecording();
   };
 
+  const toggleMirror = () => {
+    setIsMirrored(prevMirrored => !prevMirrored);
+  };
+
   const downloadVideo = () => {
     const a = document.createElement('a');
     a.href = videoURL;
@@ -64,10 +69,18 @@ function VideoRecorder() {
 
   return (
     <div>
-      <video ref={videoRef} autoPlay playsInline></video>
+      <video
+        ref={videoRef}
+        autoPlay
+        playsInline
+        style={{ transform: isMirrored ? 'scaleX(-1)' : 'scaleX(1)' }} // 미러 기능 적용
+      ></video>
       <div>
         <button onClick={switchCamera}>
           카메라 전환
+        </button>
+        <button onClick={toggleMirror}>
+          {isMirrored ? '미러 해제' : '미러 적용'}
         </button>
         {recording ? (
           <button onClick={stopRecording}>녹화 종료</button>
