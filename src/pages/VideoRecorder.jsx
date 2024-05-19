@@ -3,12 +3,17 @@ import React, { useRef, useState } from 'react';
 function VideoRecorder() {
   const [recording, setRecording] = useState(false);
   const [videoURL, setVideoURL] = useState('');
+  const [cameraFacing, setCameraFacing] = useState('user'); // 'user' for front-facing, 'environment' for rear-facing
   const videoRef = useRef();
   const mediaRecorderRef = useRef();
   const videoChunks = useRef([]);
 
   const startRecording = () => {
-    navigator.mediaDevices.getUserMedia({ video: true })
+    const constraints = {
+      video: { facingMode: cameraFacing }
+    };
+
+    navigator.mediaDevices.getUserMedia(constraints)
       .then((stream) => {
         videoRef.current.srcObject = stream;
         mediaRecorderRef.current = new MediaRecorder(stream);
@@ -25,7 +30,7 @@ function VideoRecorder() {
           const url = URL.createObjectURL(blob);
           setVideoURL(url);
 
-          // 여기서 blob을 사용하여 서버로 업로드할 수도 있습니다.
+          // Here, you can use the blob to upload it to a server.
         };
 
         mediaRecorderRef.current.start();
@@ -38,6 +43,14 @@ function VideoRecorder() {
     mediaRecorderRef.current.stop();
     videoRef.current.srcObject.getTracks().forEach(track => track.stop());
     setRecording(false);
+  };
+
+  const switchCamera = () => {
+    if (recording) {
+      stopRecording();
+    }
+    setCameraFacing(prevFacing => (prevFacing === 'user' ? 'environment' : 'user'));
+    startRecording();
   };
 
   const downloadVideo = () => {
@@ -53,8 +66,11 @@ function VideoRecorder() {
     <div>
       <video ref={videoRef} autoPlay playsInline></video>
       <div>
+        <button onClick={switchCamera}>
+          카메라 전환
+        </button>
         {recording ? (
-          <button onClick={stopRecording}>녹화 중지</button>
+          <button onClick={stopRecording}>녹화 종료</button>
         ) : (
           <button onClick={startRecording}>녹화 시작</button>
         )}
