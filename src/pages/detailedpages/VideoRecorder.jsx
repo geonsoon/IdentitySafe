@@ -15,22 +15,21 @@ function VideoRecorder() {
   useEffect(() => {
     const getCameras = async () => {
       try {
-        if (navigator.mediaDevices && typeof navigator.mediaDevices.enumerateDevices === 'function') {
-          const devices = await navigator.mediaDevices.enumerateDevices();
-          const videoDevices = devices.filter(device => device.kind === 'videoinput');
-          setCameras(videoDevices);
-          if (videoDevices.length > 0) {
-            setSelectedCameraId(videoDevices[0].deviceId);
-          }
-        } else {
-          console.warn('디바이스를 찾을 수 없습니다.');
-          setCameras([]);
+        await navigator.mediaDevices.getUserMedia({ video: true }).then(stream => {
+          stream.getTracks().forEach(track => track.stop());
+        });
+  
+        const devices = await navigator.mediaDevices.enumerateDevices();
+        const videoDevices = devices.filter(device => device.kind === 'videoinput');
+        setCameras(videoDevices);
+        if (videoDevices.length > 0) {
+          setSelectedCameraId(videoDevices[0].deviceId);
         }
       } catch (error) {
         console.error('카메라 접근 권한 문제:', error);
       }
     };
-
+  
     getCameras();
   }, []);
 
@@ -38,7 +37,7 @@ function VideoRecorder() {
     const constraints = {
       video: { 
         deviceId: selectedCameraId ? { exact: selectedCameraId } : undefined,
-        facingMode: 'user' // 모바일 기기에서 전면 카메라 사용. 후면 카메라를 사용하려면 'environment'
+        facingMode: 'user' 
       }
     };
 
