@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
+import './VideoRecorder.css'; 
 
 function VideoRecorder() {
   const [recording, setRecording] = useState(false);
@@ -11,7 +12,6 @@ function VideoRecorder() {
   const videoChunks = useRef([]);
 
   useEffect(() => {
-    // Function to get the list of available cameras
     const getCameras = async () => {
       const devices = await navigator.mediaDevices.enumerateDevices();
       const videoDevices = devices.filter(device => device.kind === 'videoinput');
@@ -23,13 +23,6 @@ function VideoRecorder() {
 
     getCameras();
   }, []);
-
-  useEffect(() => {
-    // Restart the video stream when the selected camera changes
-    if (selectedCameraId) {
-      startRecording();
-    }
-  }, [selectedCameraId]);
 
   const startRecording = () => {
     const constraints = {
@@ -78,8 +71,6 @@ function VideoRecorder() {
     if (recording) {
       stopRecording();
     }
-    // Start recording automatically after changing the camera
-    startRecording();
   };
 
   const toggleMirror = () => {
@@ -90,25 +81,25 @@ function VideoRecorder() {
   };
 
   return (
-    <div>
-      <video ref={videoRef} autoPlay playsInline></video>
-      <div>
-        <select onChange={handleCameraChange} value={selectedCameraId}>
+    <div className="video-recorder">
+      <video ref={videoRef} autoPlay playsInline className="video-feed"></video>
+      <div className="controls">
+        <select onChange={handleCameraChange} value={selectedCameraId} className="camera-select">
           {cameras.map(camera => (
             <option key={camera.deviceId} value={camera.deviceId}>
               {camera.label || 'Camera ' + camera.deviceId}
             </option>
           ))}
         </select>
-        <button onClick={toggleMirror}>
+        {recording ? (
+          <button onClick={stopRecording} className="control-button">Stop Recording</button>
+        ) : (
+          <button onClick={startRecording} className="control-button">Start Recording</button>
+        )}
+        <button onClick={toggleMirror} className="control-button">
           {isMirrored ? 'Unmirror' : 'Mirror'}
         </button>
-        {recording ? (
-          <button onClick={stopRecording}>Stop Recording</button>
-        ) : (
-          <button onClick={startRecording}>Start Recording</button>
-        )}
-        {videoURL && <button onClick={() => {}}>Download</button>}
+        {videoURL && <button onClick={() => {}} className="control-button">Download</button>}
       </div>
     </div>
   );

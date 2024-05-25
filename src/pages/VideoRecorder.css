@@ -1,0 +1,50 @@
+.video-recorder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .video-feed {
+    width: 100%;
+    max-width: 600px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+  }
+  
+  .controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .camera-select {
+    margin-bottom: 10px;
+    padding: 5px;
+  }
+  
+  .control-button {
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .control-button:hover {
+    background-color: #0056b3;
+  }
+  
+  @media (min-width: 600px) {
+    .controls {
+      flex-direction: row;
+      justify-content: center;
+    }
+  
+    .camera-select,
+    .control-button {
+      margin: 10px;
+    }
+  }
+  
