@@ -23,18 +23,26 @@
     padding: 5px;
   }
   
-  .control-button {
-    padding: 10px 20px;
-    margin: 5px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
+  .control-button,
+  .control-button:link,
+  .control-button:visited { 
+    display: inline-block; 
+    text-align: center; 
+    text-decoration: none; 
+    font-size: inherit; 
+    padding: 10px 20px; 
+    margin: 5px; 
+    background-color: rgb(52, 152, 219);
+    color: white; 
+    border: none; 
+    cursor: pointer; 
   }
   
-  .control-button:hover {
-    background-color: #0056b3;
+  .control-button:hover,
+  .control-button:active { 
+    background-color: rgb(41, 128, 185); 
   }
+  
   
   @media (min-width: 600px) {
     .controls {

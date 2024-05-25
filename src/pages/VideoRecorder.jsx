@@ -10,6 +10,7 @@ function VideoRecorder() {
   const videoRef = useRef();
   const mediaRecorderRef = useRef();
   const videoChunks = useRef([]);
+  const downloadRef = useRef();
 
   useEffect(() => {
     const getCameras = async () => {
@@ -50,6 +51,10 @@ function VideoRecorder() {
           const blob = new Blob(videoChunks.current, { type: 'video/mp4' });
           const url = URL.createObjectURL(blob);
           setVideoURL(url);
+          if (downloadRef.current) {
+            downloadRef.current.href = url;
+            downloadRef.current.download = 'recorded_video.mp4';
+          }
         };
 
         mediaRecorderRef.current.start();
@@ -99,7 +104,11 @@ function VideoRecorder() {
         <button onClick={toggleMirror} className="control-button">
           {isMirrored ? 'Unmirror' : 'Mirror'}
         </button>
-        {videoURL && <button onClick={() => {}} className="control-button">Download</button>}
+        {videoURL && (
+          <a ref={downloadRef} href={videoURL} className="control-button" download>
+            Download
+          </a>
+        )}
       </div>
     </div>
   );
