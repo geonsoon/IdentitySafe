@@ -1,28 +1,28 @@
 import './App.css';
 import React from 'react';
-import { BrowserRouter, Routes, Route , Link} from "react-router-dom";
-import Logo from '../src/image/identitysafe.png';
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import ResponsiveAppBar from './pages/ResponsiveAppBar';
-import ActionAreaCard from './pages/ActionAreaCard';
-import FooterAreaCard from './pages/FooterAreaCard';
+import Home from './pages/routerpages/Home';
+import Camera from './pages/routerpages/Camera';
+import Gallery from './pages/routerpages/Gallery';
 
 function App() {
   return (
-      <div>
-        <BrowserRouter>
-          <div>
-            <Link to="/home">
-              <ResponsiveAppBar></ResponsiveAppBar>
-            </Link>
-          </div>
-          <div>
-            <ActionAreaCard></ActionAreaCard>
-          </div>
-          <div>
-            <FooterAreaCard></FooterAreaCard>
-          </div>
-        </BrowserRouter>
-      </div>
+    <div>
+      <BrowserRouter>
+        <Link to="/home">
+          <ResponsiveAppBar />
+        </Link>
+        
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/camera" element={<Camera />} />
+          <Route path="/gallery" element={<Gallery />} />
+        </Routes>
+        
+      </BrowserRouter>
+    </div>
   );
 }
 

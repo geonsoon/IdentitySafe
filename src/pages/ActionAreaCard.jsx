@@ -1,4 +1,3 @@
-
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -31,7 +30,7 @@ export default function ActionAreaCard() {
             </span>
           </Typography>
           <br />
-          <Typography variant="body2" color="text.secondary">
+          <Typography variant="body2" color="text.secondary" sx={{ marginTop: '10px' }}>
             <span className='font1'></span>
             청주대 인공지능소프트웨어학과 <br />
             박건순, 박균호, 전유나 제작 <br />

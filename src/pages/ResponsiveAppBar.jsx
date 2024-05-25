@@ -43,13 +43,15 @@ function ResponsiveAppBar() {
         </Typography>
 
         <Box sx={{ flexGrow: 1 }}></Box>
-
         <Box sx={{ flexGrow: 0 }}>
+          {/*
           <Tooltip title="계정 설정">
             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
               <Avatar alt="User" />
             </IconButton>
           </Tooltip>
+          */}
+          
           <Menu
             sx={{ mt: '45px' }}
             id="menu-appbar"
