@@ -98,36 +98,36 @@ function VideoRecorder() {
     }
   };
 
-  return (
-    <div className="video-recorder">
-      <video ref={videoRef} autoPlay playsInline className="video-feed"></video>
-      <div className="controls">
-        <select onChange={handleCameraChange} value={selectedCameraId} className="camera-select">
-          {cameras.map(camera => (
-            <option key={camera.deviceId} value={camera.deviceId}>
-              {camera.label || 'Camera ' + camera.deviceId}
-            </option>
-          ))}
-        </select>
-        <div className="control-row">
-          {recording ? (
-            <button onClick={stopRecording} className="control-button">Stop Recording</button>
-          ) : (
-            <button onClick={startRecording} className="control-button">Start Recording</button>
-          )}
-          <button onClick={toggleMirror} className="control-button">
-            {isMirrored ? 'Unmirror' : 'Mirror'}
-          </button>
-        </div>
-        {videoURL && (
-          <a ref={downloadRef} href={videoURL} className="control-button" download>
-            Download
-          </a>
+return (
+  <div className="video-recorder">
+    <video ref={videoRef} autoPlay playsInline className="video-feed"></video>
+    <div className="controls">
+      <select onChange={handleCameraChange} value={selectedCameraId} className="camera-select">
+        {cameras.map(camera => (
+          <option key={camera.deviceId} value={camera.deviceId}>
+            {camera.label || 'Camera ' + camera.deviceId}
+          </option>
+        ))}
+      </select>
+      <div className="control-row">
+        {recording ? (
+          <button onClick={stopRecording} className="control-button">Stop Recording</button>
+        ) : (
+          <button onClick={startRecording} className="control-button">Start Recording</button>
         )}
+        <button onClick={toggleMirror} className="control-button">
+          {isMirrored ? 'Unmirror' : 'Mirror'}
+        </button>
       </div>
+      {videoURL && (
+        <a ref={downloadRef} href={videoURL} className="control-button" download>
+          Download
+        </a>
+      )}
     </div>
-  );
-  
+  </div>
+);
+
 }
 
 export default VideoRecorder;

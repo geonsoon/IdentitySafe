@@ -26,13 +26,13 @@
   }
   
   .camera-select {
+    height: 35px;
     margin-bottom: 10px;
     padding: 5px;
   }
   
   .control-button,
-  .control-button:link,
-  .control-button:visited {
+  .control-button:link {
     display: inline-block;
     text-align: center;
     text-decoration: none;
