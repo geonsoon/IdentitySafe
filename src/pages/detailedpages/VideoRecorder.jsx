@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
-import './VideoRecorder.css'; 
+import './VideoRecorder.css';
 
 function VideoRecorder() {
   const [recording, setRecording] = useState(false);
@@ -14,11 +14,20 @@ function VideoRecorder() {
 
   useEffect(() => {
     const getCameras = async () => {
-      const devices = await navigator.mediaDevices.enumerateDevices();
-      const videoDevices = devices.filter(device => device.kind === 'videoinput');
-      setCameras(videoDevices);
-      if (videoDevices.length > 0) {
-        setSelectedCameraId(videoDevices[0].deviceId);
+      try {
+        if (navigator.mediaDevices && typeof navigator.mediaDevices.enumerateDevices === 'function') {
+          const devices = await navigator.mediaDevices.enumerateDevices();
+          const videoDevices = devices.filter(device => device.kind === 'videoinput');
+          setCameras(videoDevices);
+          if (videoDevices.length > 0) {
+            setSelectedCameraId(videoDevices[0].deviceId);
+          }
+        } else {
+          console.warn('디바이스를 찾을 수 없습니다.');
+          setCameras([]);
+        }
+      } catch (error) {
+        console.error('카메라 접근 권한 문제:', error);
       }
     };
 
@@ -27,7 +36,10 @@ function VideoRecorder() {
 
   const startRecording = () => {
     const constraints = {
-      video: { deviceId: selectedCameraId ? { exact: selectedCameraId } : undefined }
+      video: { 
+        deviceId: selectedCameraId ? { exact: selectedCameraId } : undefined,
+        facingMode: 'user' // 모바일 기기에서 전면 카메라 사용. 후면 카메라를 사용하려면 'environment'
+      }
     };
 
     navigator.mediaDevices.getUserMedia(constraints)
@@ -60,7 +72,9 @@ function VideoRecorder() {
         mediaRecorderRef.current.start();
         setRecording(true);
       })
-      .catch(console.error);
+      .catch(error => {
+        console.error('카메라 접근 실패:', error);
+      });
   };
 
   const stopRecording = () => {
@@ -105,7 +119,7 @@ function VideoRecorder() {
           {isMirrored ? 'Unmirror' : 'Mirror'}
         </button>
         {videoURL && (
-          <a ref={downloadRef} href={videoURL} className="control-button" download>
+          <a ref={downloadRef} href={videoURL} className="control-button " download>
             Download
           </a>
         )}

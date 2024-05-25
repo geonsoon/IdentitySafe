@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import VideoRecorder from './VideoRecorder';
+import VideoRecorder from '../detailedpages/VideoRecorder';
 
 class Camera extends Component {
     render() {

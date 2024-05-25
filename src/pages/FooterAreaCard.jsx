@@ -19,7 +19,7 @@ export default function ActionAreaCard() {
                     <FontAwesomeIcon icon={faCameraRetro} size="9x" color='rgb(119, 140, 163)' />
                   </span>
                 </Link>
-                <Link to="/image">
+                <Link to="/gallery">
                   <span>
                     <FontAwesomeIcon icon={faImage} size="9x" color='rgb(119, 140, 163)'/> 
                   </span>

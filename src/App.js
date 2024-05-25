@@ -2,8 +2,9 @@ import './App.css';
 import React from 'react';
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import ResponsiveAppBar from './pages/ResponsiveAppBar';
-import Camera from './pages/Camera';
-import Home from './pages/Home';
+import Home from './pages/routerpages/Home';
+import Camera from './pages/routerpages/Camera';
+import Gallery from './pages/routerpages/Gallery';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/camera" element={<Camera />} />
+          <Route path="/gallery" element={<Gallery />} />
         </Routes>
         
       </BrowserRouter>
