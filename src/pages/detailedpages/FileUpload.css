@@ -1,20 +1,28 @@
+@font-face {
+  font-family: 'Freesentation-9Black';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2404@1.0/Freesentation-9Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+}
+
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: #f0f0f0;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
   
   .file-input {
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     width: 300px;
     max-width: 100%;
+    font-family: Freesentation-9Black, sans-serif;
   }
   
   .upload-button {
@@ -25,6 +33,7 @@
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+    font-family: Freesentation-9Black, sans-serif;
   }
   
   .upload-button:hover {
@@ -36,12 +45,16 @@
     max-height: 300px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    margin-top: 20px;
   }
   
   .preview-icon {
     font-size: 8rem;
+    padding-top: 50px;
   }
   
   .preview-container {
     margin-bottom: 20px; 
   }
+
+  

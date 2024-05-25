@@ -109,22 +109,25 @@ function VideoRecorder() {
             </option>
           ))}
         </select>
-        {recording ? (
-          <button onClick={stopRecording} className="control-button">Stop Recording</button>
-        ) : (
-          <button onClick={startRecording} className="control-button">Start Recording</button>
-        )}
-        <button onClick={toggleMirror} className="control-button">
-          {isMirrored ? 'Unmirror' : 'Mirror'}
-        </button>
+        <div className="control-row">
+          {recording ? (
+            <button onClick={stopRecording} className="control-button">Stop Recording</button>
+          ) : (
+            <button onClick={startRecording} className="control-button">Start Recording</button>
+          )}
+          <button onClick={toggleMirror} className="control-button">
+            {isMirrored ? 'Unmirror' : 'Mirror'}
+          </button>
+        </div>
         {videoURL && (
-          <a ref={downloadRef} href={videoURL} className="control-button " download>
+          <a ref={downloadRef} href={videoURL} className="control-button" download>
             Download
           </a>
         )}
       </div>
     </div>
   );
+  
 }
 
 export default VideoRecorder;

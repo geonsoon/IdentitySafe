@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Freesentation-9Black';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2404@1.0/Freesentation-9Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+}
+
 .video-recorder {
     display: flex;
     flex-direction: column;
@@ -38,6 +45,7 @@
     border-radius: 5px;
     transition: background-color 0.3s;
     cursor: pointer;
+    font-family: Freesentation-9Black, sans-serif;
   }
   
   .control-button:hover,
@@ -51,7 +59,6 @@
       justify-content: center;
     }
   
-    .camera-select,
     .control-button {
       margin: 10px;
     }
@@ -59,9 +66,14 @@
   
   @media (max-width: 599px) {
     .controls {
-      flex-direction: row;
-      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .control-row {
+      display: flex;
       justify-content: center;
+      margin-bottom: 10px;
     }
   
     .control-button {
