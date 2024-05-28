@@ -21,7 +21,7 @@ function FileUpload() {
       reader.readAsDataURL(selectedFile);
     }
     else if (selectedFile.type.startsWith('video/')) {
-      setPreview(<FontAwesomeIcon icon={faFileVideo} className="preview-icon" />);
+      setPreview(<FontAwesomeIcon icon={faFileVideo} size="xl" className="preview-icon" />);
     } else {
       setPreview(undefined);
     }
@@ -68,7 +68,7 @@ function FileUpload() {
         </div>
       )}
       <input type="file" className="file-input" onChange={handleFileChange} />
-      <button className="upload-button" onClick={handleUpload}>업로드</button>
+      <button className="upload-button" onClick={handleUpload}>Upload</button>
     </div>
   );
 }
