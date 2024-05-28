@@ -79,3 +79,19 @@
 .download-button:active {
   background-color: #7474C7;
 }
+
+@media (max-width: 767px) {
+
+  .video-feed {
+    margin-top: 0px;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .video-feed {
+    margin-top: 0px;
+  }
+
+}
