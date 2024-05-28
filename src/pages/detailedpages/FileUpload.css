@@ -37,8 +37,13 @@
   }
   
   .upload-button:hover {
-    background-color: rgb(41, 128, 185);
+    background-color: #5687D5;
   }
+
+  .upload-button:active {
+    background-color: #7474C7;
+  }
+  
   
   .preview-image {
     max-width: 300px;
