@@ -1,7 +1,15 @@
+@font-face {
+  font-family: 'Freesentation-9Black';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2404@1.0/Freesentation-9Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+}
+
 .video-recorder {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: Freesentation-9Black, sans-serif;
 }
 
 .video-feed {
@@ -60,7 +68,6 @@
   border-radius: 5px;
   background-color: rgb(52, 152, 219);
   color: white;
-  font-size: 16px;
   cursor: pointer;
   text-decoration: none;
 }

@@ -1,5 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import './VideoRecorder.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faVideo, faVideoSlash, faDownload} from "@fortawesome/free-solid-svg-icons";
 
 function VideoRecorder() {
   const [recording, setRecording] = useState(false);
@@ -111,9 +113,9 @@ function VideoRecorder() {
         </select>
         <div className="control-row">
           {recording ? (
-            <button onClick={stopRecording} className="control-button">■</button>
+            <button onClick={stopRecording} className="control-button"><FontAwesomeIcon icon={faVideoSlash} size="xl"/></button>
           ) : (
-            <button onClick={startRecording} className="control-button">●</button>
+            <button onClick={startRecording} className="control-button"><FontAwesomeIcon icon={faVideo} size="xl"/></button>
           )}
           <button onClick={toggleMirror} className="control-button">
             {isMirrored ? '↔' : '⇄'}
