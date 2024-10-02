@@ -105,8 +105,8 @@ const VideoRecord: FC<Props> = ({ file, setFile, onSendClick }) => {
                 <Stack sx={{width: '100%'}} alignItems='center' gap={2}>
                     <video src={URL.createObjectURL(file)} controls style={{ maxWidth: '90vw', height: 'auto', maxHeight: '50vh' }}/>
                     <Stack flexDirection='row' sx={{width: '100%'}} gap={1} justifyContent='center'>
-                        <Button onClick={() => setFile(null)} fullWidth variant='contained' color='error'>재촬영</Button>
-                        <Button onClick={onSendClick} fullWidth variant='contained' >전송</Button>
+                        <Button onClick={() => setFile(null)} fullWidth variant='contained' color='error' sx={{ fontFamily: 'NotoSerifKR, sans-serif' }}>재촬영</Button>
+                        <Button onClick={onSendClick} fullWidth variant='contained' sx={{ fontFamily: 'NotoSerifKR, sans-serif' }}>전송</Button>
                     </Stack>
                 </Stack>
             )}
