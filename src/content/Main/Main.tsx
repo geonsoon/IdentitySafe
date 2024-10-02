@@ -6,6 +6,7 @@ import KeyboardDoubleArrowRightRoundedIcon from "@mui/icons-material/KeyboardDou
 
 import cameraIcon from "../../asset/icon/camera.png";
 import galleryIcon from "../../asset/icon/gallery.png";
+import logo from "../../asset/icon/Logo-2.png"
 import Stack from "@mui/material/Stack";
 
 interface Props {
@@ -25,12 +26,8 @@ const Main: FC<Props> = ({onCameraClick, onGalleryClick}) => {
                 padding: 2,
             }}
         >
-            <Box sx={{mb: '15vh'}}>
-                <Typography variant="h1" sx={{fontSize: '80px', lineHeight: '80%'}}>
-                    Identity
-                    <br/>
-                    Safe
-                </Typography>
+            <Box sx={{mb: '5vh'}}>
+                    <img src={logo} alt="Logo" style={{ width: '300px', height: 'auto', marginTop: '20px' }} />
             </Box>
             <Grid container justifyContent='center' spacing={2} px={3} mb='5vh'>
                 <Grid item>
