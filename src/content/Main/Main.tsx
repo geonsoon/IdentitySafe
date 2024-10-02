@@ -8,6 +8,7 @@ import cameraIcon from "../../asset/icon/camera.png";
 import galleryIcon from "../../asset/icon/gallery.png";
 import logo from "../../asset/icon/Logo-2.png"
 import Stack from "@mui/material/Stack";
+import '../../asset/fonts/font.css'
 
 interface Props {
   onCameraClick: () => void;
@@ -36,7 +37,7 @@ const Main: FC<Props> = ({onCameraClick, onGalleryClick}) => {
                         sx={{backgroundColor: 'lightgrey', width: '130px', borderRadius: '10px', p: '20px', position: 'relative', boxShadow: 4}}
                     >
                         <img width='60px' height='60px' src={cameraIcon} alt='camera' />
-                        <Typography variant='body2' my={2}>Camera</Typography>
+                        <Typography variant='body2' my={1} sx={{ fontFamily: 'NotoSerifKR, sans-serif' }}>Camera</Typography>
                         <KeyboardDoubleArrowRightRoundedIcon sx={{ position: 'absolute', bottom: '10px', right: '5px'}} fontSize='small' />
                     </Stack>
                 </Grid>
@@ -46,7 +47,7 @@ const Main: FC<Props> = ({onCameraClick, onGalleryClick}) => {
                         sx={{backgroundColor: 'lightgrey', width: '130px', borderRadius: '10px', p: '20px', position: 'relative', boxShadow: 4}}
                     >
                         <img width='60px' height='60px' src={galleryIcon} alt='gallery' />
-                        <Typography variant='body2' my={2}>Gallery</Typography>
+                        <Typography variant='body2' my={1} sx={{ fontFamily: 'NotoSerifKR, sans-serif', marginLeft: '8px' }}>Gallery</Typography>
                         <KeyboardDoubleArrowRightRoundedIcon sx={{ position: 'absolute', bottom: '10px', right: '5px'}} fontSize='small' />
                     </Stack>
                 </Grid>

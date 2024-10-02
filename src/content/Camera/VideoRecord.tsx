@@ -2,6 +2,7 @@ import { FC, useCallback, useEffect, useRef, useState } from "react";
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 import Webcam from "react-webcam";
+import '../../asset/fonts/font.css';
 
 const getSupportedMimeType = () => {
   const mimeTypes = [
@@ -92,11 +93,11 @@ const VideoRecord: FC<Props> = ({ file, setFile, onSendClick }) => {
                         style={{ maxWidth: '90vw', height: 'auto', maxHeight: '50vh' }}
                     />
                     <Stack gap={1} sx={{width: '100%'}}>
-                    <Button fullWidth variant='contained' color='secondary' onClick={handleSwitchCamera}>카메라 전환</Button>
+                    <Button fullWidth variant='contained' color='secondary' onClick={handleSwitchCamera} sx={{ fontFamily: 'NotoSerifKR, sans-serif' }}>카메라 전환</Button>
                     {isRecording ? (
-                        <Button onClick={handleStopCaptureClick} fullWidth variant='contained' color='warning'>촬영 종료</Button>
+                        <Button onClick={handleStopCaptureClick} fullWidth variant='contained' color='warning' sx={{ fontFamily: 'NotoSerifKR, sans-serif' }}>촬영 종료</Button>
                     ) : (
-                        <Button onClick={handleStartCaptureClick} fullWidth variant='contained'>촬영 시작</Button>
+                        <Button onClick={handleStartCaptureClick} fullWidth variant='contained' sx={{ fontFamily: 'NotoSerifKR, sans-serif' }}>촬영 시작</Button>
                     )}
                     </Stack>
                 </>

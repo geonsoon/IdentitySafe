@@ -1,6 +1,7 @@
 import { FC, useEffect, useRef } from "react";
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
+import '../../asset/fonts/font.css'
 
 interface Props {
   file: File | null;
@@ -43,7 +44,7 @@ const SelectFile: FC<Props> = ({file, setFile, onSendClick}) => {
                         style={{display: 'none'}}
                         onChange={handleFileChange}
                     />
-                    <Button variant='contained' fullWidth onClick={openFilePicker}>선택</Button>
+                    <Button variant='contained' fullWidth onClick={openFilePicker} sx={{ fontFamily: 'NotoSerifKR, sans-serif' }}>선택</Button>
                 </>
             ): (
                 <Stack gap={2}>
@@ -51,8 +52,8 @@ const SelectFile: FC<Props> = ({file, setFile, onSendClick}) => {
                             <source key={Date.now()} src={URL.createObjectURL(file)}></source>
                         </video>
                         <Stack gap={1} justifyContent='center'>
-                            <Button fullWidth variant='contained' color='error' onClick={() => setFile(null)}>재선택</Button>
-                            <Button fullWidth variant='contained' onClick={onSendClick}>전송</Button>
+                            <Button fullWidth variant='contained' color='error' onClick={() => setFile(null)} sx={{ fontFamily: 'NotoSerifKR, sans-serif' }}>재선택</Button>
+                            <Button fullWidth variant='contained' onClick={onSendClick} sx={{ fontFamily: 'NotoSerifKR, sans-serif' }}>전송</Button>
                         </Stack>
                     </Stack>
             )}

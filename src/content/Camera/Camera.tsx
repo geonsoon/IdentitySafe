@@ -5,6 +5,7 @@ import { useState } from "react";
 import SendingVideo from "../Common/SendingVideo";
 import VideoRecord from "./VideoRecord";
 import Result from "../Common/Result";
+import '../../asset/fonts/font.css';
 import {
   calculateUploadTime,
   uploadVideo,
@@ -44,13 +45,13 @@ const Camera = () => {
       <Stack sx={{ height: "50px" }} justifyContent="center">
         <Stepper activeStep={activeStep}>
           <Step>
-            <StepLabel>촬영</StepLabel>
+            <StepLabel sx={{ fontFamily: 'NotoSerifKR, sans-serif' }}>촬영</StepLabel>
           </Step>
           <Step>
-            <StepLabel>분석</StepLabel>
+            <StepLabel sx={{ fontFamily: 'NotoSerifKR, sans-serif' }}>분석</StepLabel>
           </Step>
           <Step>
-            <StepLabel>결과</StepLabel>
+            <StepLabel sx={{ fontFamily: 'NotoSerifKR, sans-serif' }}>결과</StepLabel>
           </Step>
         </Stepper>
       </Stack>
